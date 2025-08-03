@@ -1,0 +1,186 @@
+
+
+
+
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="img/logo_TeK2OuF_txt_reverse.jpg" type="image/x-icon">
+        <link rel='css/img.css' type="text/css" >
+        <!--  -->
+        
+        <title>Index Août 2025</title>
+        <style>
+            /* Reset CSS: Please avoid making changes here unless you know what you're doing :) */
+            *,
+            *::before,
+            *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            html, body {
+                width: 100%;
+                height: 100%;
+            }
+    
+            body {
+                line-height: 1;
+                font-family: Arial, sans-serif;
+                background-color: #040218;
+            }
+    
+            ol, ul {
+                list-style: none;
+            }
+    
+            img, video {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+    
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+            .navbar {
+                position: fixed;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #000000;
+                padding: 10px 20px;
+}
+
+            .nav-links {
+                list-style: none;
+                display: flex;
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav-links li {
+                margin-left: 20px;
+            }
+
+            .nav-links a {
+                color: white;
+                text-decoration: none;
+                padding: 5px 10px;
+            }
+
+            .hamburger-menu {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+            }
+
+            .hamburger-menu .bar {
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                margin: 4px 0;
+                transition: 0.4s;
+            }
+
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+                .nav-links li {
+                    margin: 10px 0;
+                    text-align: center;
+                }
+
+                .hamburger-menu {
+                    display: flex;
+                }
+
+                .nav-links.active {
+                    display: flex;
+                }
+
+                .hamburger-menu.active .bar:nth-child(1) {
+                    /* transform: rotate(45deg) translate(5px, 5px); */
+                    transform: translateY(0px) rotate(-135deg);
+                }
+
+                .hamburger-menu.active .bar:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .hamburger-menu.active .bar:nth-child(3) {
+                    /* transform: rotate(-45deg) translate(5px, -5px); */
+                    transform: translateY(0px) rotate(135deg);
+                }
+}
+
+        </style>
+    </head>
+        <!--  -->
+        
+        <!--  -->
+        
+        <!--  -->
+        
+    <body>
+        <nav class="navbar">
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="http://localhost:8003/index.php">Accueil</a></li>
+            <li><a href="http://localhost:8003/contact.php">Contact</a></li>
+            <?php if (isset($_SESSION['id_utilisateur'])): ?>
+            <li><a href="deconnexion.php">Déconnexion</a></li>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+            <li><a href="admin.php">Administration</a></li>
+            <?php endif; ?>
+            <?php else: ?>
+            <li><a href="inscription.php">Inscription</a></li>
+            <li><a href="connexion.php">Connexion</a></li>
+            <?php endif; ?>
+        </ul>
+    </nav>
+
+        <div id="game-container"></div>
+
+        <!--  -->
+        
+        <div id="game-container">
+            <img class="img_faune" href='assets/img/w6a6775zvp661-reverse.gif'/>
+        <!--  -->
+        
+        <!--  -->
+        
+        </div>
+        <!--  -->
+        
+        <script src="./phaser.js"></script>
+        <script src="js/burger.js"></script>
+        <script type="module" src="./src/main.js"></script>
+
+
+        // * script mobile menu
+        <script>document.getElementById('hamburgerMenu').addEventListener('click', function () {
+        this.classList.toggle('active');
+        document.getElementById('navLinks').classList.toggle('active');
+        });</script>
+
+        <!--  -->
+        
+    </body>
+        <!--  -->
+        
+    </html>
+q

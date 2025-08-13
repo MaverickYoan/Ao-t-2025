@@ -390,6 +390,29 @@ if (!isset($_SESSION['username'])) {
             </div>
         </div>
     </div>
+<a href="http://lesscss.org/">
+    <div class="somediv">
+        Less is more! 
+    </div>
+</a> 
+
+<script>/*
+    jsFiddle does not directly support Less so we need these bits of code to bring it here. 
+    
+    Twitter: @aaronlayton
+    Modified by meri
+    Updated by max
+*/
+
+// Step 1: Select the style element and change it to text/less
+$('head style[type="text/css"]').attr('type', 'text/less');
+
+// Step 2: Set development mode to see errors
+less.env = 'development';
+
+// Step 3: Tell Less to refresh the styles
+less.refreshStyles();
+</script>
 
     <script>
         // Données simulées pour remplacer la base de données PostgreSQL
